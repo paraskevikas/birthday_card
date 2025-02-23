@@ -240,54 +240,7 @@ body {
 
  /* Media queries for small screens */
 @media (max-width: 600px) {
-  /* Scale the whole card down */
-  .birthdayCard {
-      width: 200px;
-      height: 280px;
-  }
-
-  /* Adjust balloon sizes for small screens */
-  .balloon-1,
-  .balloon-2,
-  .balloon-3,
-  .balloon-4 {
-      width: 70px;
-      height: 80px;
-      font-size: 30px;
-  }
-
-  .balloon-1::before,
-  .balloon-2::before,
-  .balloon-3::before,
-  .balloon-4::before {
-      font-size: 25px;
-  }
-
-  .happy {
-      font-size: 18px;
-      margin: 20px;
-  }
-
-  .name {
-      font-size: 8px;
-      left: 45px;
-      top: 180px;
-  }
-
-  /* Adjust card width and height */
-  .cardFront,
-  .cardInside {
-      width: 200px;
-      height: 280px;
-  }
-
-  .snoopy {
-      width: 180px;
-      height: 102px;
-  }
-
-  p {
-      font-size: 10px;
-      margin: 20px;
+  body {
+    transform: scale(0.4);
   }
 }
