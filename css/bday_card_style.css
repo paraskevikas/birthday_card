@@ -241,6 +241,6 @@ body {
  /* Media queries for small screens */
 @media (max-width: 600px) {
   body {
-    transform: scale(0.4);
+    transform: scale(0.3);
   }
 }
