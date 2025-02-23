@@ -22,7 +22,7 @@ body {
     flex-direction: column;
     justify-content: center;  /* Centers content vertically */
     align-items: center;  /* Centers content horizontally */
-    transform: scale(0.9);
+    transform: scale(0.4);
 }
   
   .birthdayCard {
