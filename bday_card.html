@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Card</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bday_card_style.css" />
+  </head>
+  <body>
+    <div class="birthdayCard" id="card">
+      <div class="cardFront">
+        <h3 class="happy">HAPPY BIRTHDAY</h3>
+        <div class="balloons">
+          <div class="balloon-1"></div>
+          <div class="balloon-2"></div>
+          <div class="balloon-3"></div>
+          <div class="balloon-4"></div>
+        </div>
+        <div class="snoopy"></div>
+      </div>
+      <div class="cardInside">
+        <h3 class="back">HAPPY BIRTHDAY</h3>
+        <p>Χρόνια πολλά, Μαριάννα!</p>
+        <p>
+          Σου ευχόμαστε να είσαι πάντα ευτυχισμένη!! Να έχεις υγεία, αγάπη, πολλές
+          χαρές και να πραγματοποιήσεις όλα σου τα όνειρα!! Να περνάς τέλεια και
+          να είσαι πάντα χαμογελαστή!!
+        </p>
+        <p class="name">-Κατερίνα, Μαρία, Παναγιώτα</p>
+      </div>
+    </div>
+
+    <script>
+        document.getElementById("card").addEventListener("click", function () {
+          this.classList.toggle("flipped");
+        });
+    </script>  
+  </body>
+</html>

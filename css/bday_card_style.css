@@ -1,0 +1,239 @@
+@font-face {
+  font-family: "Bahnschrift-Bold";
+  src: url("../fonts/Bahnschrift.ttf") format("truetype");
+  font-weight: 800; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bahnschrift-Light";
+  src: url("../fonts/Bahnschrift.ttf") format("truetype");
+  font-weight: 400; /* Light */
+  font-style: normal;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url("../images/background-snoopy.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centers content vertically */
+    align-items: center;  /* Centers content horizontally */
+}
+  
+  .birthdayCard {
+    position: relative;
+    width: 425px;
+    height: 595px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(4250px);
+    transition: 1s;
+  }
+  
+  .birthdayCard.flipped {
+    transform: perspective(4250px) rotate(5deg);
+    box-shadow: inset 170px 34px 170px rgba(0, 0, 0, 0.2),
+                0 17px 170px rgba(0, 0, 0, 0.5);
+  }
+
+  .birthdayCard.flipped .snoopy {
+    visibility: visible;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg);
+  }
+  
+  .birthdayCard.flipped .cardFront {
+    transform: rotateY(-160deg);
+  }
+  
+  .birthdayCard.flipped .happy {
+    visibility: hidden;
+  }
+
+  .birthdayCard.flipped .balloon-1 {
+    visibility: hidden;
+  }
+
+  .birthdayCard.flipped .balloon-2 {
+    visibility: hidden;
+  }
+
+  .birthdayCard.flipped .balloon-3 {
+    visibility: hidden;
+  }
+  
+  .birthdayCard.flipped .balloon-4 {
+    visibility: hidden;
+  }
+  
+  .cardFront {
+    position: relative;
+    background-color: #fff;
+    width: 425px;
+    height: 595px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 170px 34px 170px rgba(0, 0, 0, 0.2),
+      51px 0 85px rgba(0, 0, 0, 0.4);
+    transition: 0.6s;
+  }
+
+  .snoopy {
+    width: 374px;
+    height: 217.6px;
+    background-image: url('../images/birthday-snoopy.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    visibility: hidden;
+  }
+  
+  .happy {
+    font-family: "Bahnschrift-Bold", sans-serif;
+    text-align: center;
+    color: rgb(128, 10, 10);
+    font-size: 37.4px;
+    margin: 51px;
+    transition: 0.1s;
+  }
+  
+  .balloons {
+    position: absolute;
+  }
+  
+.balloon-1,
+.balloon-2,
+.balloon-3,
+.balloon-4 {
+  position: absolute;
+  width: 144.5px;
+  height: 161.5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bahnschrift", sans-serif;
+  font-size: 68px; /* Adjust the size of the number */
+  color: white; /* Color of the number */
+  font-weight: bold;
+  text-align: center;
+}
+
+.balloon-1 {
+  background-color: rgba(156, 10, 10, 0.705);
+  left: -17px;
+  top: 85px;
+}
+
+.balloon-2 {
+  background-color: rgba(156, 10, 10, 0.863);
+  left: 85px;
+  top: 34px;
+}
+
+.balloon-3 {
+  background-color: rgba(156, 10, 10, 0.705);
+  left: 187px;
+  top: 85px;
+}
+
+.balloon-4 {
+  background-color: rgba(156, 10, 10, 0.863);
+  left: 289px;
+  top: 85px;
+}
+
+/* Adding numbers inside each balloon using ::before */
+.balloon-1::before {
+  content: "2"; /* Balloon 1 contains 1 */
+  position: absolute;
+  font-size: 68px; /* Adjust the size of the number */
+  color: rgb(233, 233, 233); /* Set color of the number */
+}
+
+.balloon-2::before {
+  content: "1"; /* Balloon 2 contains 2 */
+  position: absolute;
+  font-size: 68px; /* Adjust the size of the number */
+  color: rgb(233, 233, 233); /* Set color of the number */
+}
+
+.balloon-3::before {
+  content: "0"; /* Balloon 3 contains 3 */
+  position: absolute;
+  font-size: 68px; /* Adjust the size of the number */
+  color: rgb(233, 233, 233); /* Set color of the number */
+}
+
+.balloon-4::before {
+  content: "1"; /* Balloon 4 contains 4 */
+  position: absolute;
+  font-size: 68px; /* Adjust the size of the number */
+  color: rgb(233, 233, 233); /* Set color of the number */
+}
+
+/* Adding colored string lines */
+.balloon-1::after,
+.balloon-2::after,
+.balloon-3::after,
+.balloon-4::after {
+  content: "";
+  position: absolute;
+  width: 1.7px; /* Narrow line for the string */
+  height: 263.5px; /* Height of the string */
+  background-color: #9c0000; /* Color of the string */
+  top: 161.5px; /* Align it below the balloon */
+  left: 73.1px; /* Align it to the center of the balloon */
+}
+  
+  .balloon-1::after,
+  .balloon-3::after {
+    border-bottom: 17px solid rgba(206, 16, 16, 0.705);
+  }
+  
+  .balloon-2::after,
+  .balloon-4::after {
+    border-bottom: 17px solid rgba(206, 16, 16, 0.863);
+  }  
+  
+  .cardInside {
+    position: absolute;
+    background-color: #fff;
+    width: 425px;
+    height: 595px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 170px 34px 170px rgba(0, 0, 0, 0.2);
+  }
+  
+  p {
+    font-family: "Bahnschrift-Light", sans-serif;
+    margin: 51px;
+    color: rgb(0, 0, 0);
+    font-size: 18.7px;
+    text-align: justify;
+  }
+  
+  .name {
+    position: absolute;
+    left: 102px;
+    top: 374px;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+  }
+  
+  .back {
+    font-family: "Bahnschrift-Bold", sans-serif;
+    text-align: center;
+    margin: 51px;
+    color: rgb(128, 10, 10);
+    font-size: 30px;
+    transition: 0.1s;
+  }
